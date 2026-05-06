@@ -1,0 +1,13 @@
+{
+  "name": "helldivers-recruitment",
+  "version": "1.0.0",
+  "description": "超级地球征兵网站 - 纯静态版本",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "npx serve ."
+  },
+  "keywords": ["helldivers", "recruitment", "static-site"],
+  "author": "",
+  "license": "MIT"
+}

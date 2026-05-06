@@ -1,0 +1,61 @@
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+
+const PORT = 8888;
+
+const server = http.createServer((req, res) => {
+    let filePath = '.' + req.url;
+    if (filePath === './') {
+        filePath = './index.html';
+    }
+
+    const extname = path.extname(filePath);
+    let contentType = 'text/html';
+    switch (extname) {
+        case '.js':
+            contentType = 'text/javascript';
+            break;
+        case '.css':
+            contentType = 'text/css';
+            break;
+        case '.json':
+            contentType = 'application/json';
+            break;
+        case '.png':
+            contentType = 'image/png';
+            break;
+        case '.jpg':
+        case '.jpeg':
+            contentType = 'image/jpg';
+            break;
+        case '.gif':
+            contentType = 'image/gif';
+            break;
+        case '.svg':
+            contentType = 'image/svg+xml';
+            break;
+        case '.mp4':
+            contentType = 'video/mp4';
+            break;
+    }
+
+    fs.readFile(filePath, (error, content) => {
+        if (error) {
+            if(error.code === 'ENOENT') {
+                res.writeHead(404);
+                res.end('File not found');
+            } else {
+                res.writeHead(500);
+                res.end('Server Error: ' + error.code);
+            }
+        } else {
+            res.writeHead(200, { 'Content-Type': contentType });
+            res.end(content, 'utf-8');
+        }
+    });
+});
+
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running at http://localhost:${PORT}/`);
+});

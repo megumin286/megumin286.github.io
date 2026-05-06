@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELLDIVERS - 超级地球征兵中心</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <header class="header">
+        <div class="super-earth-flag">
+            <div class="flag-icon">🌍</div>
+            <div class="flag-badge">超级地球联邦</div>
+        </div>
+        <div class="header-title">
+            <h1 class="main-title">HELLDIVERS</h1>
+            <p class="sub-title">绝地潜兵</p>
+        </div>
+        <div class="header-badge">DEMOCRACY ✅</div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="propaganda-banner">
+                <div class="banner-top">
+                    <span class="banner-decoration">✦</span>
+                    <h1 class="propaganda-title">征召令</h1>
+                    <span class="banner-decoration">✦</span>
+                </div>
+                <div class="enlistment-count">
+                    <span class="count-label">当前服役人数</span>
+                    <span class="count-number" id="enlistmentCount">0</span>
+                    <span class="count-label">人</span>
+                </div>
+                <div class="propaganda-subtitle">为超级地球而战 · 为民主而献身</div>
+                <div class="propaganda-motto">
+                    "自由不是免费的 - 但您的服务将获得应有的回报"
+                </div>
+            </div>
+            
+            <div class="propaganda-entry">
+                <button class="propaganda-btn" id="propagandaBtn">
+                    <span class="propaganda-icon">🎬</span>
+                    <span class="propaganda-text">观看征兵宣传片</span>
+                    <span class="propaganda-badge">NEW</span>
+                </button>
+            </div>
+            
+            <div class="hero-content">
+                <div class="benefits-panel">
+                    <div class="panel-header">
+                        <span class="panel-icon">🎖️</span>
+                        <h3 class="panel-title">加入绝地潜兵，您将获得：</h3>
+                    </div>
+                    <div class="benefits-accordion">
+                        <div class="benefit-card" data-benefit="gear">
+                            <div class="benefit-header">
+                                <div class="benefit-icon-wrap">📦</div>
+                                <span class="benefit-text">标准装备配给</span>
+                                <span class="benefit-arrow">▼</span>
+                            </div>
+                            <div class="benefit-detail">
+                                <h4>推荐配装方案</h4>
+                                <div class="loadout-grid">
+                                    <div class="loadout-card">
+                                        <h5>🔥 突击型配装</h5>
+                                        <ul>
+                                            <li>主武器：AR-23突击步枪</li>
+                                            <li>副武器：P9手枪</li>
+                                            <li>战术装备：破片手雷 x3</li>
+                                            <li>支援装备：弹药包</li>
+                                        </ul>
+                                    </div>
+                                    <div class="loadout-card">
+                                        <h5>💥 爆破型配装</h5>
+                                        <ul>
+                                            <li>主武器：GL-21榴弹发射器</li>
+                                            <li>副武器：霰弹枪</li>
+                                            <li>战术装备：C4炸弹 x2</li>
+                                            <li>支援装备：盾牌</li>
+                                        </ul>
+                                    </div>
+                                    <div class="loadout-card">
+                                        <h5>⚡ 支援型配装</h5>
+                                        <ul>
+                                            <li>主武器：MG-42重机枪</li>
+                                            <li>副武器：SMG冲锋枪</li>
+                                            <li>战术装备：医疗包</li>
+                                            <li>支援装备：哨戒炮</li>
+                                        </ul>
+                                    </div>
+                                    <div class="loadout-card">
+                                        <h5>❄️ 控制型配装</h5>
+                                        <ul>
+                                            <li>主武器：冰冻步枪</li>
+                                            <li>副武器：火焰喷射器</li>
+                                            <li>战术装备：毒气弹</li>
+                                            <li>支援装备：电塔</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-card" data-benefit="armor">
+                            <div class="benefit-header">
+                                <div class="benefit-icon-wrap">🪖</div>
+                                <span class="benefit-text">战斗装甲套装</span>
+                                <span class="benefit-arrow">▼</span>
+                            </div>
+                            <div class="benefit-detail">
+                                <h4>装甲等级介绍</h4>
+                                <div class="armor-list">
+                                    <div class="armor-item">
+                                        <span class="armor-rank">I级</span>
+                                        <span class="armor-desc">基础战斗装甲，提供标准防护</span>
+                                    </div>
+                                    <div class="armor-item">
+                                        <span class="armor-rank">II级</span>
+                                        <span class="armor-desc">强化装甲，增加25%防护</span>
+                                    </div>
+                                    <div class="armor-item">
+                                        <span class="armor-rank">III级</span>
+                                        <span class="armor-desc">重型装甲，增加50%防护</span>
+                                    </div>
+                                    <div class="armor-item">
+                                        <span class="armor-rank">IV级</span>
+                                        <span class="armor-desc">精英装甲，增加75%防护</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-card" data-benefit="promotion">
+                            <div class="benefit-header">
+                                <div class="benefit-icon-wrap">📈</div>
+                                <span class="benefit-text">快速晋升通道</span>
+                                <span class="benefit-arrow">▼</span>
+                            </div>
+                            <div class="benefit-detail">
+                                <h4>军衔晋升体系</h4>
+                                <div class="rank-list">
+                                    <div class="rank-item">列兵 → 下士 → 中士 → 上士</div>
+                                    <div class="rank-item">少尉 → 中尉 → 上尉 → 少校</div>
+                                    <div class="rank-item">中校 → 上校 → 准将 → 少将</div>
+                                    <div class="rank-item">中将 → 上将 → 元帅</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-card" data-benefit="training">
+                            <div class="benefit-header">
+                                <div class="benefit-icon-wrap">🎯</div>
+                                <span class="benefit-text">精英训练课程</span>
+                                <span class="benefit-arrow">▼</span>
+                            </div>
+                            <div class="benefit-detail">
+                                <h4>训练科目</h4>
+                                <ul class="training-list">
+                                    <li>🔫 武器精通训练</li>
+                                    <li>💥 爆破技术培训</li>
+                                    <li>🏃 战术机动训练</li>
+                                    <li>🔧 战场维修技能</li>
+                                    <li>⛑️ 急救医疗训练</li>
+                                    <li>📡 通讯加密技术</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-card" data-benefit="vacation">
+                            <div class="benefit-header">
+                                <div class="benefit-icon-wrap">🌴</div>
+                                <span class="benefit-text">民主假期福利</span>
+                                <span class="benefit-arrow">▼</span>
+                            </div>
+                            <div class="benefit-detail">
+                                <h4>假期政策</h4>
+                                <ul class="vacation-list">
+                                    <li>每年30天带薪假期</li>
+                                    <li>战斗任务轮换休息</li>
+                                    <li>家属探亲补贴</li>
+                                    <li>战后康复疗养</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-card" data-benefit="medal">
+                            <div class="benefit-header">
+                                <div class="benefit-icon-wrap">🏆</div>
+                                <span class="benefit-text">联邦荣誉勋章</span>
+                                <span class="benefit-arrow">▼</span>
+                            </div>
+                            <div class="benefit-detail">
+                                <h4>荣誉勋章等级</h4>
+                                <div class="medal-list">
+                                    <div class="medal-item">⭐ 铜星勋章 - 首次击杀</div>
+                                    <div class="medal-item">⭐⭐ 银星勋章 - 10次任务完成</div>
+                                    <div class="medal-item">⭐⭐⭐ 金星勋章 - 50次任务完成</div>
+                                    <div class="medal-item">🏅 联邦十字勋章 - 特殊贡献</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-card" data-benefit="insurance">
+                            <div class="benefit-header">
+                                <div class="benefit-icon-wrap">🛡️</div>
+                                <span class="benefit-text">全面保障计划</span>
+                                <span class="benefit-arrow">▼</span>
+                            </div>
+                            <div class="benefit-detail">
+                                <h4>保障内容</h4>
+                                <ul class="insurance-list">
+                                    <li>医疗费用全额报销</li>
+                                    <li>伤残抚恤金</li>
+                                    <li>阵亡家属保障</li>
+                                    <li>退役安置计划</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-card" data-benefit="title">
+                            <div class="benefit-header">
+                                <div class="benefit-icon-wrap">⭐</div>
+                                <span class="benefit-text">英雄称号授予</span>
+                                <span class="benefit-arrow">▼</span>
+                            </div>
+                            <div class="benefit-detail">
+                                <h4>特殊称号</h4>
+                                <div class="title-list">
+                                    <div class="title-item">「异端终结者」- 击杀1000敌人</div>
+                                    <div class="title-item">「无畏先锋」- 完成100次任务</div>
+                                    <div class="title-item">「钢铁意志」- 单人完成任务</div>
+                                    <div class="title-item">「银河英雄」- 最高荣誉</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recruitment-poster">
+                    <div class="poster-image">
+                        <img src="recruitment_poster.jpg" alt="绝地潜兵征兵海报">
+                    </div>
+                    <div class="poster-text">
+                        <p class="poster-line">🌍 超级地球的英雄们！</p>
+                        <p class="poster-line">⚔️ 加入我们，清除异端！</p>
+                        <p class="poster-line">🎖️ 传播民主，解放银河！</p>
+                    </div>
+                    <button class="btn-enlist" onclick="scrollToSection('recruit')">
+                        <span class="btn-star">★</span>
+                        <span class="btn-text">立即应征</span>
+                        <span class="btn-star">★</span>
+                    </button>
+                    <div class="poster-warning">
+                        <span class="warning-icon">⚠️</span>
+                        <span>今日名额有限 · 死亡率稳定 · 福利真实有效</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-ticker">
+                <div class="ticker-content">
+                    <span class="ticker-badge">[ 紧急公告 ]</span>
+                    <span>虫族威胁持续升级 · 超级地球需要您 · 报名从速 · 民主必胜</span>
+                    <span class="ticker-badge">[ 紧急公告 ]</span>
+                    <span>虫族威胁持续升级 · 超级地球需要您 · 报名从速 · 民主必胜</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="recruit" class="recruit-section">
+            <div class="section-header">
+                <div class="section-badge">📋</div>
+                <h2>征兵报名表</h2>
+                <p class="section-subtitle">填写以下信息，加入精英部队</p>
+            </div>
+            <form class="recruit-form" id="recruitForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">年龄</label>
+                        <input type="number" id="age" name="age" required placeholder="18-50" min="18" max="50">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">通讯地址</label>
+                        <input type="email" id="email" name="email" required placeholder="email@superearth.gov">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">联络频道</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="紧急联系方式">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="role">兵种选择</label>
+                    <select id="role" name="role" required>
+                        <option value="">请选择兵种</option>
+                        <option value="assault">突击兵 · ASSAULT</option>
+                        <option value="support">支援兵 · SUPPORT</option>
+                        <option value="engineer">工程兵 · ENGINEER</option>
+                        <option value="medic">医疗兵 · MEDIC</option>
+                        <option value="heavy">重火力 · HEAVY</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="motto">战斗宣言</label>
+                    <textarea id="motto" name="motto" rows="3" placeholder="写下您为民主而战的誓言..."></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">我自愿加入绝地潜兵，宣誓保卫超级地球，传播民主价值，清除所有异端威胁。我理解并接受所有服役条款。</label>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <span class="submit-icon">✦</span>
+                    <span>提交应征申请</span>
+                    <span class="submit-icon">✦</span>
+                </button>
+            </form>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="section-header">
+                <div class="section-badge">🌍</div>
+                <h2>关于超级地球</h2>
+                <p class="section-subtitle">我们的使命 · 我们的荣耀</p>
+            </div>
+            <div class="about-content">
+                <div class="about-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>精准打击</h3>
+                    <p>配备最先进的武器系统，确保每一次任务都能精确完成。从轨道炮击到战术支援，我们拥有消灭敌人的全部手段。</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>超强防护</h3>
+                    <p>先进的战斗装甲，为您的安全提供全方位保障。纳米科技装甲能够抵御最猛烈的攻击。</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🚀</div>
+                    <h3>快速部署</h3>
+                    <p>全球快速响应系统，随时准备投入战斗。从轨道空投到前线作战，响应时间以秒计算。</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>团队协作</h3>
+                    <p>与战友并肩作战，共同完成艰巨任务。团队合作是胜利的关键，没有人是孤军奋战。</p>
+                </div>
+            </div>
+            <div class="super-earth-info">
+                <div class="info-header">
+                    <span class="info-icon">⭐</span>
+                    <h3>超级地球联邦</h3>
+                    <span class="info-icon">⭐</span>
+                </div>
+                <div class="cinematic-text">
+                    <p class="line1">"你相信自由吗？"</p>
+                    <p class="line2">"面对压迫，你是否会挺身而出，保护手无寸铁之人？"</p>
+                    <p class="line3">"为和平而战。为民主献身。"</p>
+                </div>
+                <div class="mission-statement">
+                    <p>"主权、自由、繁荣——我们在宇宙中所绽放的光芒"</p>
+                    <p>超级地球是人类文明的最后堡垒。在这个充满敌意的银河系中，我们是民主与自由的最后防线。</p>
+                    <p>虫族、机器人、邪教——无数异端势力企图摧毁我们的生活方式。但我们不会屈服。</p>
+                    <p>绝地潜兵是联邦最精锐的部队，是自由的守护者，是民主的利剑。我们从天而降，清除异端，传播民主的火种。</p>
+                    <p class="warning-text">⚠️ 记住：自由不是免费的。但你的牺牲将被铭记。</p>
+                </div>
+                <div class="oath-section">
+                    <h4 class="oath-title">入伍誓言</h4>
+                    <p>"我宣誓，将我的生命奉献给超级地球联邦。"</p>
+                    <p>"我将清除所有异端，传播民主价值。"</p>
+                    <p>"我将服从命令，不畏牺牲。"</p>
+                    <p>"为了超级地球！为了民主！"</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-banner">
+            <span class="footer-star">★</span>
+            <span>超级地球武装力量部批准征召</span>
+            <span class="footer-star">★</span>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <p>通讯频道: contact@helldivers.superearth</p>
+                <p>紧急热线: 1-800-DEMOCRACY</p>
+            </div>
+            <div class="footer-section">
+                <h4>资源中心</h4>
+                <p>训练手册 · 装备指南 · 战术简报</p>
+            </div>
+            <div class="footer-section">
+                <h4>法律声明</h4>
+                <p>所有应征者必须符合联邦征兵标准</p>
+                <p>最终解释权归超级地球联邦所有</p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2024 超级地球联邦 · 为民主而战</p>
+        </div>
+        <div class="disclaimer">
+            <p>⚠️ 免责声明：潜兵牺牲后，所有丧葬费用由潜兵家属负责。超级地球联邦不承担任何相关费用。</p>
+        </div>
+        <div class="admin-entry">
+            <button id="adminBtn" class="admin-btn">🔐 管理入口</button>
+        </div>
+    </footer>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">🎖️</div>
+            <h3>应征成功！</h3>
+            <p>感谢您加入绝地潜兵！您的申请已被接收。</p>
+            <p>我们将在48小时内与您联系，安排入伍事宜。</p>
+            <p class="modal-warning">记住：自由不是免费的！</p>
+            <button class="btn-submit" onclick="closeModal()">确认</button>
+        </div>
+    </div>
+
+    <div id="adminModal" class="modal">
+        <div class="admin-modal-content">
+            <div class="admin-header">
+                <div class="admin-icon">🔐</div>
+                <h3>超级地球征兵管理系统</h3>
+                <button class="close-admin" onclick="closeAdminModal()">✕</button>
+            </div>
+            
+            <div id="statusMessage" class="status-message"></div>
+            
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalApplicants">0</div>
+                    <div class="stat-label">👥 报名人数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalAssault">0</div>
+                    <div class="stat-label">⚔️ 突击兵</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalSupport">0</div>
+                    <div class="stat-label">🎯 支援兵</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalHeavy">0</div>
+                    <div class="stat-label">💥 重火力</div>
+                </div>
+            </div>
+            
+            <div class="admin-controls">
+                <button class="btn-refresh" onclick="refreshApplicants()">
+                    <span>🔄</span>
+                    <span>刷新数据</span>
+                </button>
+                <button class="btn-export" onclick="exportApplicants()">
+                    <span>📥</span>
+                    <span>导出数据</span>
+                </button>
+            </div>
+            
+            <div class="admin-list-container">
+                <h4>📋 报名者信息</h4>
+                <div id="applicantsList" class="applicants-list">
+                    <p class="no-data">
+                        <span class="no-data-icon">📭</span>
+                        暂无报名数据，快去宣传吧！
+                    </p>
+                </div>
+            </div>
+            
+            <div class="admin-actions">
+                <button class="btn-clear" onclick="clearApplicants()">
+                    <span>🗑️</span>
+                    <span>清除所有数据</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="videoModal" class="modal video-modal">
+        <div class="video-modal-content">
+            <button class="close-video" id="closeVideoBtn">✕</button>
+            
+            <div class="subtitles-top" id="subtitlesTop">
+                <div class="subtitle-text" id="topSubtitle"></div>
+            </div>
+            
+            <div class="video-container">
+                <video id="propagandaVideo" controls>
+                    <source src="propaganda.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+            </div>
+            
+            <div class="subtitles-bottom" id="subtitlesBottom">
+                <div class="subtitle-text" id="bottomSubtitle"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
